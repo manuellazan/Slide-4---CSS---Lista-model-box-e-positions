@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        p:nth-child(1) {
+            font-family: Arial, sans-serif;
+            color: blue;
+        }
+        p:nth-child(2) {
+            font-family: 'Courier New', monospace;
+            color: green;
+        }
+        p:nth-child(3) {
+            font-family: Georgia, serif;
+            color: red;
+        }
+        span {
+            font-weight: bold;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo com Lorem Ipsum</h1>
+    <p>Lorem ipsum <span>dolor</span> sit amet, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor <span>sit amet</span>, consectetur adipiscing elit.</p>
+    <p>Lorem ipsum dolor sit amet, <span>consectetur</span> adipiscing elit.</p>
+</body>
+</html>

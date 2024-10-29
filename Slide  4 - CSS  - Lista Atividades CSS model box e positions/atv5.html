@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Explicação de Cada Regra e Aplicação
+Regra 1: li { color: red; }
+
+Descrição: Esta regra aplica a cor vermelha a todos os elementos li>.
+Aplicação: Todos os itens da lista li> terão a cor vermelha como padrão, exceto se uma regra com maior especificidade substituí-la.
+Regra 2: .churras { color: green; }
+
+Descrição: Esta regra aplica a cor verde a qualquer elemento com a classe churras.
+Aplicação: Os itens li class="churras"> (Carne e Linguiça) terão a cor verde. Essa regra substitui a cor vermelha do item li> padrão para estes itens.
+Regra 3: .fruta { color: gray; }
+
+Descrição: Aplica a cor cinza a qualquer elemento com a classe fruta.
+Aplicação: Todos os itens da lista com a classe fruta (Melão, Pera, Uva e Maçã) serão exibidos em cinza, substituindo a cor vermelha padrão dos li>.
+Regra 4: li + li.churras { color: black; }
+
+Descrição: Aplica a cor preta ao elemento li class="churras"> que é precedido diretamente por outro li.
+Aplicação: Neste caso, o item "Linguiça" (segundo li class="churras">) será preto, pois está imediatamente após o item "Carne".
+Regra 5: .churras[draggable="true"] { color: magenta; }
+
+Descrição: Aplica a cor magenta a qualquer elemento com a classe churras que tenha o atributo draggable="true".
+Aplicação: O item "Pão de alho" (li id="lip7" class="churras" draggable="true">) é o único li> que atende a essa condição, então ele será exibido em magenta.
+Regra 6: #lip1, #lip2, #lip3 { color: blue; }
+
+Descrição: Aplica a cor azul aos elementos com os IDs lip1, lip2 e lip3.
+Aplicação: Mesmo que o item lip1 não esteja na lista HTML fornecida, lip2 e lip3 estão. Então, "Pera" (id="lip2") e "Uva" (id="lip3") serão exibidos em azul.
+Regra 7: #lip3.fruta { color: orange; }
+
+Descrição: Aplica a cor laranja a um elemento com o ID lip3 e a classe fruta.
+Aplicação: O item "Uva" (li id="lip3" class="fruta">) tem tanto o ID lip3 quanto a classe fruta, então ele será exibido em laranja, substituindo a cor azul atribuída na Regra 6.
+Regra 8: ol > li.churras#lip5 { color: purple; }
+
+Descrição: Aplica a cor roxa a um elemento li> com a classe churras e o ID lip5, contanto que esteja dentro de um ol.
+Aplicação: Essa regra não afeta nenhum item na lista atual, pois não há um elemento com o ID lip5. Caso ele estivesse presente, esse elemento teria a cor roxa.
+Resultado Final de Cores Aplicadas em Cada Item
+Abacaxi (id="lip0"): Vermelho (Regra 1).
+Melão (class="fruta"): Cinza (Regra 3).
+Pera (id="lip2" class="fruta"): Azul (Regra 6).
+Uva (id="lip3" class="fruta"): Laranja (Regra 7).
+Maçã (id="lip4" class="fruta"): Cinza (Regra 3).
+Carne (class="churras"): Verde (Regra 2).
+Linguiça (class="churras"): Preto (Regra 4).
+Pão de alho (id="lip7" class="churras" draggable="true"): Magenta (Regra 5).
+</body>
+</html>
