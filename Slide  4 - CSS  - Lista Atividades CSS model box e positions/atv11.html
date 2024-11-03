@@ -1,47 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Layout com Posicionamento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Layout</title>
     <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        
         .header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+            padding: 20px;
         }
-        .menu {
-            float: left;
-            width: 25%;
-            background-color: #f4f4f4;
-            padding: 15px;
+
+        .logo {
+            font-size: 50px;
+            color: blue;
+            font-weight: bold;
+            margin: 0;
         }
-        .content {
-            float: left;
-            width: 50%;
-            padding: 15px;
-        }
-        .sidebar {
-            float: right;
-            width: 25%;
-            background-color: #f4f4f4;
-            padding: 15px;
-        }
-        .footer {
-            clear: both;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+
+        
+        .nav {
             margin-top: 10px;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            color: purple;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .text {
+            margin: 10px;
+            padding: 10px;
+            text-align: justify;
+            color: #555;
+        }
+
+       
+        .chat-container {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .chat-header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .message {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+        }
+
+        .message img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message-content {
+            background-color: #e0f7fa;
+            padding: 8px;
+            border-radius: 5px;
+            color: #333;
+            max-width: 180px;
+        }
+
+        .message-response {
+            background-color: #dcedc8;
+        }
+
+        .chat-input-container {
+            padding: 10px;
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input-container input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .chat-input-container button {
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-input-container button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="header">Cabeçalho</div>
-    <div class="menu">Menu Lateral</div>
-    <div class="content">Conteúdo Principal</div>
-    <div class="sidebar">Barra Lateral</div>
-    <div class="footer">Rodapé</div>
+
+    
+    <header class="header">
+        <div class="logo">LOGO</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    
+    <div class="content">
+        <img src="https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg" alt="Prato de comida">
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Doloremque, soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, cumque.
+        </div>
+        <img src="https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg" alt="Prato de comida">
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Doloremque, soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, cumque.
+        </div>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container">
+        <div class="chat-header">Chat</div>
+        <div class="message">
+            <img src="https://i.pravatar.cc/30?img=1" alt="Avatar 1">
+            <div class="message-content">Olá, tudo bem?</div>
+        </div>
+        <div class="message">
+            <img src="https://i.pravatar.cc/30?img=1" alt="Avatar 2">
+            <div class="message-content message-response">Estou bem sim, e você?</div>
+        </div>
+        <div class="message">
+            <img src="https://i.pravatar.cc/30?img=1" alt="Avatar 3">
+            <div class="message-content">Vamos sair hoje? Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+        <div class="message">
+            <img src="https://i.pravatar.cc/30?img=1" alt="Avatar 4">
+            <div class="message-content message-response">Criatura...</div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" placeholder="Digite sua mensagem">
+            <button>Enviar</button>
+        </div>
+    </div>
+
 </body>
 </html>
